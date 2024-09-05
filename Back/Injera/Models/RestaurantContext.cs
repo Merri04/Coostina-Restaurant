@@ -65,7 +65,7 @@ public class RestaurantContext : DbContext
                     Name = "Tibs",
                     Description = "Fried meat with spices served with injera.",
                     Price = 299.00M,
-                    ImageUrl = "/images/kibsi.jpg",
+                    ImageUrl = "/images/kitfo.jpg",
                     CategoryId = 1
                 },
                 new MenuItem

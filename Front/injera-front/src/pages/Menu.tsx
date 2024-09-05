@@ -94,7 +94,9 @@ const Price = styled.p`
 const Menu: React.FC = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-
+ 
+  // Base URL for the backend
+ const BASE_URL = "http://localhost:5102";
 
   // Fetch menu items from the API
   useEffect(() => {
@@ -135,7 +137,7 @@ const Menu: React.FC = () => {
       <MenuItemsGrid>
         {menuItems.map(item => (
           <MenuItemCard key={item.id}>
-            <Image src={item.imageUrl} alt={item.name} />
+            <Image src={`${BASE_URL}${item.imageUrl}`} alt={item.name} />
             <MenuItemDetails>
               <MenuItemName>{item.name}</MenuItemName>
               <MenuItemDescription>{item.description}</MenuItemDescription>
