@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { MenuItem } from '../models/MenuItem';
+import { Category } from '../models/Category';
+
+// Define types for the menu items and categories
 
 // Container for the entire menu
 const MenuContainer = styled.div`
@@ -87,18 +91,16 @@ const Price = styled.p`
   margin-top: 10px;
 `;
 
-const Menu = () => {
-  const [menuItems, setMenuItems] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(null);
+const Menu: React.FC = () => {
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+
 
   // Fetch menu items from the API
   useEffect(() => {
     axios.get('http://localhost:5102/api/MenuItems')
       .then(response => {
         setMenuItems(response.data);
-        setFilteredItems(response.data); // Initially show all items
       })
       .catch(error => {
         console.error('Error fetching menu items', error);
@@ -116,13 +118,6 @@ const Menu = () => {
       });
   }, []);
 
-  // Filter items based on category
-  const filterByCategory = (categoryId) => {
-    setActiveCategory(categoryId);
-    const filtered = menuItems.filter(item => item.categoryId === categoryId);
-    setFilteredItems(filtered);
-  };
-
   return (
     <MenuContainer>
       <h1>Menu</h1>
@@ -130,10 +125,7 @@ const Menu = () => {
       {/* Sticky Header with Category Buttons */}
       <StickyHeader>
         {categories.slice(0, 3).map(category => (
-          <CategoryButton
-            key={category.id}
-            onClick={() => filterByCategory(category.id)}
-          >
+          <CategoryButton key={category.id}>
             {category.name}
           </CategoryButton>
         ))}
@@ -141,7 +133,7 @@ const Menu = () => {
 
       {/* Grid layout for menu items */}
       <MenuItemsGrid>
-        {filteredItems.map(item => (
+        {menuItems.map(item => (
           <MenuItemCard key={item.id}>
             <Image src={item.imageUrl} alt={item.name} />
             <MenuItemDetails>

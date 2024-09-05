@@ -7,7 +7,7 @@ const ContactContainer = styled.div`
   padding: 20px;
 `;
 
-function Contact() {
+const Contact: React.FC = () => {
   return (
     <ContactContainer>
       <h2>Contact Us</h2>

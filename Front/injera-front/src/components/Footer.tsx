@@ -8,7 +8,7 @@ const FooterContainer = styled.footer`
   text-align: center;
 `;
 
-function Footer() {
+const Footer: React.FC = () => {
   return (
     <FooterContainer>
       © 2024 EthioStar. All rights reserved.

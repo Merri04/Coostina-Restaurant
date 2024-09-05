@@ -125,3 +125,4 @@ C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.pdb
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.genruntimeconfig.cache
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\ref\Injera.dll
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.sourcelink.json

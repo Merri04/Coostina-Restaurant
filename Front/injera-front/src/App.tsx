@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <LanguageProvider>
