@@ -76,7 +76,7 @@ const MenuItemName = styled.h2`
   font-weight: bold;
   margin: 10px 0;
 `;
-
+//new line
 // Styling for the description of the menu item
 const MenuItemDescription = styled.p`
   margin: 10px 0;
