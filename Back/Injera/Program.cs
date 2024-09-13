@@ -16,6 +16,10 @@ builder.Services.AddCors(options =>
                         .AllowAnyHeader()
                         .AllowAnyMethod());
 });
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -36,7 +40,7 @@ app.UseStaticFiles();
 app.UseRouting();
 // Apply the CORS policy
 app.UseCors("AllowReactApp");
-
+app.UseCors("AllowAll");
 app.UseAuthorization();
 app.MapControllers(); // This ensures your API controllers are reachable
 app.MapControllerRoute(

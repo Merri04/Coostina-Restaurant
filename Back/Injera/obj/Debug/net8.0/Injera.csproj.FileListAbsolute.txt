@@ -126,3 +126,9 @@ C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.genruntimeconfig.cache
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\ref\Injera.dll
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.sourcelink.json
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

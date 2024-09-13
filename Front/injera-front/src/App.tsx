@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
+import Reservation from './pages/Reservation';
+import ReservationPage from './pages/Reservation';
 
 const App: React.FC = () => {
   return (
@@ -13,9 +15,10 @@ const App: React.FC = () => {
       <LanguageProvider>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/reservation" element={<Reservation/>} />
         </Routes>
         <Footer />
       </LanguageProvider>

@@ -118,10 +118,11 @@ const Header: React.FC = () => {
       </Hamburger>
       <Nav open={isOpen}>
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-        <Link to="/reservations" onClick={() => setIsOpen(false)}>Reservations</Link>
+        <Link to="/reservation" onClick={() => setIsOpen(false)}>Reservations</Link>
         <Link to="/restaurant" onClick={() => setIsOpen(false)}>Restaurant</Link>
         <Link to="/menu" onClick={() => setIsOpen(false)}>Menu</Link>
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+
       </Nav>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div onClick={() => toggleLanguage('NO')} style={{ cursor: 'pointer', marginRight: '10px' }}>NO</div>

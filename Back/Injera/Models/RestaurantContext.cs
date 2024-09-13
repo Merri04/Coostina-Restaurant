@@ -5,9 +5,7 @@ public class RestaurantContext : DbContext
     {
         public RestaurantContext(DbContextOptions<RestaurantContext> options) : base(options) {}
         public DbSet<MenuItem> MenuItems { get; set; }
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
-        public DbSet<Event> Events { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,9 +21,10 @@ public class RestaurantContext : DbContext
 
             // Seed data for menu items
             modelBuilder.Entity<Category>().HasData(
-                new Category { CategoryId = 1, Name = "Main Mesob Dishes" },
-                new Category { CategoryId = 2, Name = "Vegan and Vegetarian Dishes" });
-                new Category {CategoryId = 3, Name = "Drikke"};
+                new Category { CategoryId = 1, Name = "Habesha" },
+                new Category { CategoryId = 2, Name = "Italian" },
+                new Category {CategoryId = 3, Name = "Drinks"}
+                );
 
 
             modelBuilder.Entity<MenuItem>().HasData(
@@ -34,7 +33,7 @@ public class RestaurantContext : DbContext
                     Id = 1,
                     Name = "Kitfo",
                     Description = "Beef with black cardamom & spiced butter Mitmita served with injera.",
-                    Price = 319.00M,
+                    Price = 325.00M,
                     ImageUrl = "/images/kitfo.jpg",
                     CategoryId = 1,  // Link to Main Mesob Dishes
                     
@@ -44,7 +43,7 @@ public class RestaurantContext : DbContext
                     Id = 2,
                     Name = "Gored Gored",
                     Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
-                    Price = 319.00M,
+                    Price = 325.00M,
                     ImageUrl = "/images/gored.jpg",
                     CategoryId = 1,  // Link to Main Mesob Dishes
                     
@@ -52,43 +51,317 @@ public class RestaurantContext : DbContext
                 new MenuItem
                 {
                     Id = 3,
-                    Name = "Shiro",
-                    Description = "Ground chickpeas simmered in berbere sauce served with injera.",
-                    Price = 319.00M,
-                    ImageUrl = "/images/gored.jpg",
-                    CategoryId = 2,  // Link to Vegan and Vegetarian Dishes
+                    Name = "Tibsi Firfir",
+                    Description = "Grilled biff prepared with onion, garlic, oil and green papper served with injera.",
+                    Price = 349.00M,
+                    ImageUrl = "/images/firfir.webp",
+                    CategoryId = 1,  // Link to Vegan and Vegetarian Dishes
                     
                 },
                 new MenuItem
                 {
                     Id = 4,
-                    Name = "Tibs",
-                    Description = "Fried meat with spices served with injera.",
-                    Price = 299.00M,
-                    ImageUrl = "/images/kitfo.jpg",
+                    Name = "White Tibsi",
+                    Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
+                    Price = 249.00M,
+                    ImageUrl = "/images/xaida.jpg",
                     CategoryId = 1
                 },
                 new MenuItem
                 {
                     Id = 5,
-                    Name = "Sjokoladefondant",
-                    Description = "Chocolate fondant served with vanilla ice cream.",
-                    Price = 135.00M,
-                    ImageUrl = "/images/kitfo.jpg",
-                    CategoryId = 2  // Desserts
+                    Name = "Zilzil Tibsi",
+                    Description = "Strips of beef steked with butter, traditional herbs, spices ans served with injera.",
+                    Price = 349.00M,
+                    ImageUrl = "/images/zilzil.webp",
+                    CategoryId = 1  // Desserts
                 },
                 new MenuItem
                 {
                     Id = 6,
-                    Name = "Banansplit",
-                    Description = "Banana, ice cream, chocolate sauce, and raspberry coulis.",
-                    Price = 160.00M,
-                    ImageUrl = "/images/gored.jpg",
-                    CategoryId = 2  // Desserts
-                }
+                    Name = "Keyh Wet",
+                    Description = "Beef meat prepared with onion berbere pepper and butter served with injera.",
+                    Price = 249.00M,
+                    ImageUrl = "/images/qeyhTibsi.jpg",
+                    CategoryId = 1  // Desserts
+                },
+                new MenuItem
+                {
+                    Id = 7,
+                    Name = "Red Tibsi",
+                    Description = "Beef meat prepared with onion berbere pepper and butter served with injera.",
+                    Price = 249.00M,
+                    ImageUrl = "/images/qeyh.jpg",
+                    CategoryId = 1  // Desserts
+                },
+                new MenuItem
+                {
+                    Id = 8,
+                    Name = "Huset's Special",
+                    Description = "a combination of exotic national dishes Mosob style served with injera. .",
+                    Price = 299.00M,
+                    ImageUrl = "/images/beyaynetu.jpeg",
+                    CategoryId = 1  // Desserts
+                },
+             // Seed data for Italian dishes
+            new MenuItem
+            {
+                Id = 9,
+                Name = "Margherita Pizza",
+                Description = "Classic pizza with tomato, mozzarella, and basil.",
+                Price = 120.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 10,
+                Name = "Pasta Carbonara",
+                Description = "Pasta with eggs, cheese, pancetta, and pepper.",
+                Price = 140.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 11,
+                Name = "Lasagna",
+                Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
+                Price = 160.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 12,
+                Name = "Spaghetti Bolognese",
+                Description = "Spaghetti with slow-cooked meat sauce.",
+                Price = 130.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 13,
+                Name = "Risotto",
+                Description = "Creamy rice dish with mushrooms and Parmesan.",
+                Price = 150.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 14,
+                Name = "Margherita Pizza",
+                Description = "Classic pizza with tomato, mozzarella, and basil.",
+                Price = 120.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 15,
+                Name = "Pasta Carbonara",
+                Description = "Pasta with eggs, cheese, pancetta, and pepper.",
+                Price = 140.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 16,
+                Name = "Lasagna",
+                Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
+                Price = 160.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 17,
+                Name = "Spaghetti Bolognese",
+                Description = "Spaghetti with slow-cooked meat sauce.",
+                Price = 130.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 18,
+                Name = "Risotto",
+                Description = "Creamy rice dish with mushrooms and Parmesan.",
+                Price = 150.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 19,
+                Name = "Fettuccine Alfredo",
+                Description = "Pasta tossed with butter, Parmesan, and cream.",
+                Price = 145.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 20,
+                Name = "Bruschetta",
+                Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
+                Price = 90.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 21,
+                Name = "Tiramisu",
+                Description = "Traditional Italian coffee-flavored dessert.",
+                Price = 80.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+            new MenuItem
+            {
+                Id = 22,
+                Name = "Gnocchi",
+                Description = "Soft dough dumplings served with a tomato sauce.",
+                Price = 135.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 2
+            },
+        
 
-             );
+        // Seed data for drinks
+            new MenuItem
+            {
+                Id = 23,
+                Name = "Cappuccino",
+                Description = "Italian coffee drink with steamed milk foam.",
+                Price = 50.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 24,
+                Name = "Espresso",
+                Description = "Rich and bold Italian coffee.",
+                Price = 45.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 25,
+                Name = "Red Wine",
+                Description = "Full-bodied red wine.",
+                Price = 80.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 26,
+                Name = "Lemonade",
+                Description = "Freshly squeezed lemonade.",
+                Price = 40.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 27,
+                Name = "Mineral Water",
+                Description = "Chilled sparkling water.",
+                Price = 30.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 28,
+                Name = "Cappuccino",
+                Description = "Italian coffee drink with steamed milk foam.",
+                Price = 50.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 29,
+                Name = "Espresso",
+                Description = "Rich and bold Italian coffee.",
+                Price = 45.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 30,
+                Name = "Red Wine",
+                Description = "Full-bodied red wine.",
+                Price = 80.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 31,
+                Name = "Lemonade",
+                Description = "Freshly squeezed lemonade.",
+                Price = 40.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 32,
+                Name = "Mineral Water",
+                Description = "Chilled sparkling water.",
+                Price = 30.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 33,
+                Name = "Iced Tea",
+                Description = "Chilled iced tea with lemon.",
+                Price = 35.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 34,
+                Name = "Cocktail",
+                Description = "Fruity alcoholic beverage.",
+                Price = 95.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 35,
+                Name = "Beer",
+                Description = "Refreshing cold beer.",
+                Price = 50.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 36,
+                Name = "Hot Chocolate",
+                Description = "Warm and comforting chocolate drink.",
+                Price = 40.00M,
+                ImageUrl = "/images/kitfo.jpg",
+                CategoryId = 3
+            }
+        ); 
         }
     }
+
 
  

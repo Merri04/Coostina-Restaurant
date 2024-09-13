@@ -35,61 +35,18 @@ namespace Injera.Migrations
                         new
                         {
                             CategoryId = 1,
-                            Name = "Main Mesob Dishes"
+                            Name = "Habesha"
                         },
                         new
                         {
                             CategoryId = 2,
-                            Name = "Vegan and Vegetarian Dishes"
+                            Name = "Italian"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            Name = "Drinks"
                         });
-                });
-
-            modelBuilder.Entity("Customer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("Event", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("MenuItem", b =>
@@ -130,7 +87,7 @@ namespace Injera.Migrations
                             Description = "Beef with black cardamom & spiced butter Mitmita served with injera.",
                             ImageUrl = "/images/kitfo.jpg",
                             Name = "Kitfo",
-                            Price = 319.00m
+                            Price = 325.00m
                         },
                         new
                         {
@@ -139,43 +96,313 @@ namespace Injera.Migrations
                             Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
                             ImageUrl = "/images/gored.jpg",
                             Name = "Gored Gored",
-                            Price = 319.00m
+                            Price = 325.00m
                         },
                         new
                         {
                             Id = 3,
-                            CategoryId = 2,
-                            Description = "Ground chickpeas simmered in berbere sauce served with injera.",
-                            ImageUrl = "/images/gored.jpg",
-                            Name = "Shiro",
-                            Price = 319.00m
+                            CategoryId = 1,
+                            Description = "Grilled biff prepared with onion, garlic, oil and green papper served with injera.",
+                            ImageUrl = "/images/firfir.webp",
+                            Name = "Tibsi Firfir",
+                            Price = 349.00m
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 1,
-                            Description = "Fried meat with spices served with injera.",
-                            ImageUrl = "/images/kitfo.jpg",
-                            Name = "Tibs",
-                            Price = 299.00m
+                            Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
+                            ImageUrl = "/images/xaida.jpg",
+                            Name = "White Tibsi",
+                            Price = 249.00m
                         },
                         new
                         {
                             Id = 5,
-                            CategoryId = 2,
-                            Description = "Chocolate fondant served with vanilla ice cream.",
-                            ImageUrl = "/images/kitfo.jpg",
-                            Name = "Sjokoladefondant",
-                            Price = 135.00m
+                            CategoryId = 1,
+                            Description = "Strips of beef steked with butter, traditional herbs, spices ans served with injera.",
+                            ImageUrl = "/images/zilzil.webp",
+                            Name = "Zilzil Tibsi",
+                            Price = 349.00m
                         },
                         new
                         {
                             Id = 6,
+                            CategoryId = 1,
+                            Description = "Beef meat prepared with onion berbere pepper and butter served with injera.",
+                            ImageUrl = "/images/qeyhTibsi.jpg",
+                            Name = "Keyh Wet",
+                            Price = 249.00m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 1,
+                            Description = "Beef meat prepared with onion berbere pepper and butter served with injera.",
+                            ImageUrl = "/images/qeyh.jpg",
+                            Name = "Red Tibsi",
+                            Price = 249.00m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 1,
+                            Description = "a combination of exotic national dishes Mosob style served with injera. .",
+                            ImageUrl = "/images/beyaynetu.jpeg",
+                            Name = "Huset's Special",
+                            Price = 299.00m
+                        },
+                        new
+                        {
+                            Id = 9,
                             CategoryId = 2,
-                            Description = "Banana, ice cream, chocolate sauce, and raspberry coulis.",
-                            ImageUrl = "/images/gored.jpg",
-                            Name = "Banansplit",
+                            Description = "Classic pizza with tomato, mozzarella, and basil.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Margherita Pizza",
+                            Price = 120.00m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 2,
+                            Description = "Pasta with eggs, cheese, pancetta, and pepper.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Pasta Carbonara",
+                            Price = 140.00m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryId = 2,
+                            Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lasagna",
                             Price = 160.00m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryId = 2,
+                            Description = "Spaghetti with slow-cooked meat sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Spaghetti Bolognese",
+                            Price = 130.00m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryId = 2,
+                            Description = "Creamy rice dish with mushrooms and Parmesan.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Risotto",
+                            Price = 150.00m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryId = 2,
+                            Description = "Classic pizza with tomato, mozzarella, and basil.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Margherita Pizza",
+                            Price = 120.00m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryId = 2,
+                            Description = "Pasta with eggs, cheese, pancetta, and pepper.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Pasta Carbonara",
+                            Price = 140.00m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryId = 2,
+                            Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lasagna",
+                            Price = 160.00m
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryId = 2,
+                            Description = "Spaghetti with slow-cooked meat sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Spaghetti Bolognese",
+                            Price = 130.00m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryId = 2,
+                            Description = "Creamy rice dish with mushrooms and Parmesan.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Risotto",
+                            Price = 150.00m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryId = 2,
+                            Description = "Pasta tossed with butter, Parmesan, and cream.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Fettuccine Alfredo",
+                            Price = 145.00m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryId = 2,
+                            Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Bruschetta",
+                            Price = 90.00m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CategoryId = 2,
+                            Description = "Traditional Italian coffee-flavored dessert.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Tiramisu",
+                            Price = 80.00m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CategoryId = 2,
+                            Description = "Soft dough dumplings served with a tomato sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Gnocchi",
+                            Price = 135.00m
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CategoryId = 3,
+                            Description = "Italian coffee drink with steamed milk foam.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Cappuccino",
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CategoryId = 3,
+                            Description = "Rich and bold Italian coffee.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Espresso",
+                            Price = 45.00m
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CategoryId = 3,
+                            Description = "Full-bodied red wine.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Red Wine",
+                            Price = 80.00m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CategoryId = 3,
+                            Description = "Freshly squeezed lemonade.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lemonade",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CategoryId = 3,
+                            Description = "Chilled sparkling water.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Mineral Water",
+                            Price = 30.00m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CategoryId = 3,
+                            Description = "Italian coffee drink with steamed milk foam.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Cappuccino",
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CategoryId = 3,
+                            Description = "Rich and bold Italian coffee.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Espresso",
+                            Price = 45.00m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CategoryId = 3,
+                            Description = "Full-bodied red wine.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Red Wine",
+                            Price = 80.00m
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CategoryId = 3,
+                            Description = "Freshly squeezed lemonade.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lemonade",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CategoryId = 3,
+                            Description = "Chilled sparkling water.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Mineral Water",
+                            Price = 30.00m
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CategoryId = 3,
+                            Description = "Chilled iced tea with lemon.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Iced Tea",
+                            Price = 35.00m
+                        },
+                        new
+                        {
+                            Id = 34,
+                            CategoryId = 3,
+                            Description = "Fruity alcoholic beverage.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Cocktail",
+                            Price = 95.00m
+                        },
+                        new
+                        {
+                            Id = 35,
+                            CategoryId = 3,
+                            Description = "Refreshing cold beer.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Beer",
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CategoryId = 3,
+                            Description = "Warm and comforting chocolate drink.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Hot Chocolate",
+                            Price = 40.00m
                         });
                 });
 
@@ -201,10 +428,6 @@ namespace Injera.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReservationDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SpecialRequests")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
