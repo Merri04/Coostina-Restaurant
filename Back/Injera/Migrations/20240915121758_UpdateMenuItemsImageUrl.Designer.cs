@@ -3,6 +3,7 @@ using System;
 using Injera.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Injera.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20240915121758_UpdateMenuItemsImageUrl")]
+    partial class UpdateMenuItemsImageUrl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
@@ -199,7 +202,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 14,
+                            Id = 19,
                             CategoryId = 2,
                             Description = "Pasta tossed with butter, Parmesan, and cream.",
                             ImageUrl = "/images/alfredo.jpg",
@@ -208,7 +211,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 15,
+                            Id = 20,
                             CategoryId = 2,
                             Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
                             ImageUrl = "/images/Bruschetta.jpg",
@@ -217,7 +220,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 16,
+                            Id = 21,
                             CategoryId = 2,
                             Description = "Traditional Italian coffee-flavored dessert.",
                             ImageUrl = "/images/Tiramisu.webp",
@@ -226,7 +229,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 17,
+                            Id = 22,
                             CategoryId = 2,
                             Description = "Soft dough dumplings served with a tomato sauce.",
                             ImageUrl = "/images/Gnocchi.jpg",
@@ -235,7 +238,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 18,
+                            Id = 23,
                             CategoryId = 3,
                             Description = "Italian coffee drink with steamed milk foam.",
                             ImageUrl = "/images/Cappuccino.webp",
@@ -244,7 +247,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 19,
+                            Id = 24,
                             CategoryId = 3,
                             Description = "Rich and bold Italian coffee.",
                             ImageUrl = "/images/Espresso.webp",
@@ -253,43 +256,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 26,
-                            CategoryId = 3,
-                            Description = "Warm and comforting chocolate drink.",
-                            ImageUrl = "/images/hotchaco.jpg",
-                            Name = "Hot Chocolate",
-                            Price = 40.00m
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 3,
-                            Description = "Freshly squeezed lemonade.",
-                            ImageUrl = "/images/Lemonade.jpg",
-                            Name = "Lemonade",
-                            Price = 40.00m
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 3,
-                            Description = "Chilled iced tea with lemon.",
-                            ImageUrl = "/images/Iced.jpg",
-                            Name = "Iced Tea",
-                            Price = 35.00m
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 3,
-                            Description = "Chilled sparkling water.",
-                            ImageUrl = "/images/Mineral.png",
-                            Name = "Mineral Water",
-                            Price = 30.00m
-                        },
-                        new
-                        {
-                            Id = 20,
+                            Id = 25,
                             CategoryId = 3,
                             Description = "Full-bodied red wine.",
                             ImageUrl = "/images/redw.jpeg",
@@ -298,7 +265,34 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 24,
+                            Id = 26,
+                            CategoryId = 3,
+                            Description = "Freshly squeezed lemonade.",
+                            ImageUrl = "/images/Lemonade.jpg",
+                            Name = "Lemonade",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CategoryId = 3,
+                            Description = "Chilled sparkling water.",
+                            ImageUrl = "/images/Mineral.png",
+                            Name = "Mineral Water",
+                            Price = 30.00m
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CategoryId = 3,
+                            Description = "Chilled iced tea with lemon.",
+                            ImageUrl = "/images/Iced.jpg",
+                            Name = "Iced Tea",
+                            Price = 35.00m
+                        },
+                        new
+                        {
+                            Id = 34,
                             CategoryId = 3,
                             Description = "Fruity alcoholic beverage.",
                             ImageUrl = "/images/Cocktail.jpg",
@@ -307,12 +301,21 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 25,
+                            Id = 35,
                             CategoryId = 3,
                             Description = "Refreshing cold beer.",
                             ImageUrl = "/images/beer.jpg",
                             Name = "Beer",
                             Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CategoryId = 3,
+                            Description = "Warm and comforting chocolate drink.",
+                            ImageUrl = "/images/hotchaco.jpg",
+                            Name = "Hot Chocolate",
+                            Price = 40.00m
                         });
                 });
 

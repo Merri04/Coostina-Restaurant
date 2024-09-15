@@ -3,6 +3,7 @@ using System;
 using Injera.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Injera.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20240915112605_SeedAdditionalMenuItems")]
+    partial class SeedAdditionalMenuItems
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
@@ -166,7 +169,7 @@ namespace Injera.Migrations
                             Id = 10,
                             CategoryId = 2,
                             Description = "Pasta with eggs, cheese, pancetta, and pepper.",
-                            ImageUrl = "/images/carbonara.jpg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Pasta Carbonara",
                             Price = 140.00m
                         },
@@ -175,7 +178,7 @@ namespace Injera.Migrations
                             Id = 11,
                             CategoryId = 2,
                             Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
-                            ImageUrl = "/images/lasagna.jpg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Lasagna",
                             Price = 160.00m
                         },
@@ -184,7 +187,7 @@ namespace Injera.Migrations
                             Id = 12,
                             CategoryId = 2,
                             Description = "Spaghetti with slow-cooked meat sauce.",
-                            ImageUrl = "/images/bolognese.jpeg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Spaghetti Bolognese",
                             Price = 130.00m
                         },
@@ -193,7 +196,7 @@ namespace Injera.Migrations
                             Id = 13,
                             CategoryId = 2,
                             Description = "Creamy rice dish with mushrooms and Parmesan.",
-                            ImageUrl = "/images/risotto.webp",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Risotto",
                             Price = 150.00m
                         },
@@ -201,118 +204,208 @@ namespace Injera.Migrations
                         {
                             Id = 14,
                             CategoryId = 2,
-                            Description = "Pasta tossed with butter, Parmesan, and cream.",
-                            ImageUrl = "/images/alfredo.jpg",
-                            Name = "Fettuccine Alfredo",
-                            Price = 145.00m
+                            Description = "Classic pizza with tomato, mozzarella, and basil.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Margherita Pizza",
+                            Price = 120.00m
                         },
                         new
                         {
                             Id = 15,
                             CategoryId = 2,
-                            Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
-                            ImageUrl = "/images/Bruschetta.jpg",
-                            Name = "Bruschetta",
-                            Price = 90.00m
+                            Description = "Pasta with eggs, cheese, pancetta, and pepper.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Pasta Carbonara",
+                            Price = 140.00m
                         },
                         new
                         {
                             Id = 16,
                             CategoryId = 2,
-                            Description = "Traditional Italian coffee-flavored dessert.",
-                            ImageUrl = "/images/Tiramisu.webp",
-                            Name = "Tiramisu",
-                            Price = 80.00m
+                            Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lasagna",
+                            Price = 160.00m
                         },
                         new
                         {
                             Id = 17,
                             CategoryId = 2,
+                            Description = "Spaghetti with slow-cooked meat sauce.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Spaghetti Bolognese",
+                            Price = 130.00m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryId = 2,
+                            Description = "Creamy rice dish with mushrooms and Parmesan.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Risotto",
+                            Price = 150.00m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryId = 2,
+                            Description = "Pasta tossed with butter, Parmesan, and cream.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Fettuccine Alfredo",
+                            Price = 145.00m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryId = 2,
+                            Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Bruschetta",
+                            Price = 90.00m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CategoryId = 2,
+                            Description = "Traditional Italian coffee-flavored dessert.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Tiramisu",
+                            Price = 80.00m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CategoryId = 2,
                             Description = "Soft dough dumplings served with a tomato sauce.",
-                            ImageUrl = "/images/Gnocchi.jpg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Gnocchi",
                             Price = 135.00m
                         },
                         new
                         {
-                            Id = 18,
+                            Id = 23,
                             CategoryId = 3,
                             Description = "Italian coffee drink with steamed milk foam.",
-                            ImageUrl = "/images/Cappuccino.webp",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Cappuccino",
                             Price = 50.00m
                         },
                         new
                         {
-                            Id = 19,
+                            Id = 24,
                             CategoryId = 3,
                             Description = "Rich and bold Italian coffee.",
-                            ImageUrl = "/images/Espresso.webp",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Espresso",
                             Price = 45.00m
                         },
                         new
                         {
-                            Id = 26,
-                            CategoryId = 3,
-                            Description = "Warm and comforting chocolate drink.",
-                            ImageUrl = "/images/hotchaco.jpg",
-                            Name = "Hot Chocolate",
-                            Price = 40.00m
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 3,
-                            Description = "Freshly squeezed lemonade.",
-                            ImageUrl = "/images/Lemonade.jpg",
-                            Name = "Lemonade",
-                            Price = 40.00m
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 3,
-                            Description = "Chilled iced tea with lemon.",
-                            ImageUrl = "/images/Iced.jpg",
-                            Name = "Iced Tea",
-                            Price = 35.00m
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 3,
-                            Description = "Chilled sparkling water.",
-                            ImageUrl = "/images/Mineral.png",
-                            Name = "Mineral Water",
-                            Price = 30.00m
-                        },
-                        new
-                        {
-                            Id = 20,
+                            Id = 25,
                             CategoryId = 3,
                             Description = "Full-bodied red wine.",
-                            ImageUrl = "/images/redw.jpeg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Red Wine",
                             Price = 80.00m
                         },
                         new
                         {
-                            Id = 24,
+                            Id = 26,
+                            CategoryId = 3,
+                            Description = "Freshly squeezed lemonade.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lemonade",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CategoryId = 3,
+                            Description = "Chilled sparkling water.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Mineral Water",
+                            Price = 30.00m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CategoryId = 3,
+                            Description = "Italian coffee drink with steamed milk foam.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Cappuccino",
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CategoryId = 3,
+                            Description = "Rich and bold Italian coffee.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Espresso",
+                            Price = 45.00m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CategoryId = 3,
+                            Description = "Full-bodied red wine.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Red Wine",
+                            Price = 80.00m
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CategoryId = 3,
+                            Description = "Freshly squeezed lemonade.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Lemonade",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CategoryId = 3,
+                            Description = "Chilled sparkling water.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Mineral Water",
+                            Price = 30.00m
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CategoryId = 3,
+                            Description = "Chilled iced tea with lemon.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Iced Tea",
+                            Price = 35.00m
+                        },
+                        new
+                        {
+                            Id = 34,
                             CategoryId = 3,
                             Description = "Fruity alcoholic beverage.",
-                            ImageUrl = "/images/Cocktail.jpg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Cocktail",
                             Price = 95.00m
                         },
                         new
                         {
-                            Id = 25,
+                            Id = 35,
                             CategoryId = 3,
                             Description = "Refreshing cold beer.",
-                            ImageUrl = "/images/beer.jpg",
+                            ImageUrl = "/images/kitfo.jpg",
                             Name = "Beer",
                             Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CategoryId = 3,
+                            Description = "Warm and comforting chocolate drink.",
+                            ImageUrl = "/images/kitfo.jpg",
+                            Name = "Hot Chocolate",
+                            Price = 40.00m
                         });
                 });
 

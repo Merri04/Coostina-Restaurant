@@ -3,6 +3,7 @@ using System;
 using Injera.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Injera.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20240915122023_UpdateMenuItemsImageUrl2")]
+    partial class UpdateMenuItemsImageUrl2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
@@ -253,12 +256,12 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 26,
+                            Id = 20,
                             CategoryId = 3,
-                            Description = "Warm and comforting chocolate drink.",
-                            ImageUrl = "/images/hotchaco.jpg",
-                            Name = "Hot Chocolate",
-                            Price = 40.00m
+                            Description = "Full-bodied red wine.",
+                            ImageUrl = "/images/redw.jpeg",
+                            Name = "Red Wine",
+                            Price = 80.00m
                         },
                         new
                         {
@@ -271,15 +274,6 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 23,
-                            CategoryId = 3,
-                            Description = "Chilled iced tea with lemon.",
-                            ImageUrl = "/images/Iced.jpg",
-                            Name = "Iced Tea",
-                            Price = 35.00m
-                        },
-                        new
-                        {
                             Id = 22,
                             CategoryId = 3,
                             Description = "Chilled sparkling water.",
@@ -289,12 +283,12 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 20,
+                            Id = 23,
                             CategoryId = 3,
-                            Description = "Full-bodied red wine.",
-                            ImageUrl = "/images/redw.jpeg",
-                            Name = "Red Wine",
-                            Price = 80.00m
+                            Description = "Chilled iced tea with lemon.",
+                            ImageUrl = "/images/Iced.jpg",
+                            Name = "Iced Tea",
+                            Price = 35.00m
                         },
                         new
                         {
@@ -313,6 +307,15 @@ namespace Injera.Migrations
                             ImageUrl = "/images/beer.jpg",
                             Name = "Beer",
                             Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CategoryId = 3,
+                            Description = "Warm and comforting chocolate drink.",
+                            ImageUrl = "/images/hotchaco.jpg",
+                            Name = "Hot Chocolate",
+                            Price = 40.00m
                         });
                 });
 

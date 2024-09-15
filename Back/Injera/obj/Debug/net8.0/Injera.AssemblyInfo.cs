@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Injera")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae210a8b3c46d1a9580e0ed934576a6d55fb1c8e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a33cf49725d80b40adc831e8c2aa3cc31dbd21b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Injera")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Injera")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

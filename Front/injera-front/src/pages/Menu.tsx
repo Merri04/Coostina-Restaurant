@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { MenuItem } from '../models/MenuItem';
 import { Category } from '../models/Category';
+import { Link } from 'react-router-dom';  // Import Link
 
 // Container for the entire menu
 const MenuContainer = styled.div`
@@ -81,12 +82,27 @@ const Price = styled.p`
   font-weight: bold;
   margin-top: 10px;
 `;
+// Styled Reservation Button
+const ReservationButton = styled(Link)`
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #D2691E;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  &:hover {
+    background-color: #A0522D;
+  }
+`;
 
 const Menu: React.FC = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-  const [activeCategory, setActiveCategory] = useState<number | null>(null); // Initially null
+  const [activeCategory, setActiveCategory] = useState<number | null>(1); // Initially null
   const [filteredItems, setFilteredItems] = useState<MenuItem[]>([]);
+  
 
   const BASE_URL = 'http://localhost:5102';
 
@@ -137,8 +153,7 @@ useEffect(() => {
 
   // Handle category click and filter
   const handleCategoryClick = (categoryId: number) => {
-    console.log('Category clicked:', categoryId);
-    setActiveCategory(categoryId); // Changing activeCategory triggers re-filter
+    setActiveCategory(categoryId);
   };
 
   return (
@@ -186,6 +201,8 @@ useEffect(() => {
           <p>No items available in this category.</p>
         )}
       </MenuItemsGrid>
+      {/* Reservation Button */}
+      <ReservationButton to="/reservation">Make a Reservation</ReservationButton>
     </MenuContainer>
   );
 };

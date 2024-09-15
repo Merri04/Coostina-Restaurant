@@ -110,7 +110,7 @@ public class RestaurantContext : DbContext
                 Name = "Margherita Pizza",
                 Description = "Classic pizza with tomato, mozzarella, and basil.",
                 Price = 120.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/margarita.jpg",
                 CategoryId = 2
             },
             new MenuItem
@@ -119,7 +119,7 @@ public class RestaurantContext : DbContext
                 Name = "Pasta Carbonara",
                 Description = "Pasta with eggs, cheese, pancetta, and pepper.",
                 Price = 140.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/carbonara.jpg",
                 CategoryId = 2
             },
             new MenuItem
@@ -128,7 +128,7 @@ public class RestaurantContext : DbContext
                 Name = "Lasagna",
                 Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
                 Price = 160.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/lasagna.jpg",
                 CategoryId = 2
             },
             new MenuItem
@@ -137,7 +137,7 @@ public class RestaurantContext : DbContext
                 Name = "Spaghetti Bolognese",
                 Description = "Spaghetti with slow-cooked meat sauce.",
                 Price = 130.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/bolognese.jpeg",
                 CategoryId = 2
             },
             new MenuItem
@@ -146,88 +146,44 @@ public class RestaurantContext : DbContext
                 Name = "Risotto",
                 Description = "Creamy rice dish with mushrooms and Parmesan.",
                 Price = 150.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/risotto.webp",
                 CategoryId = 2
             },
+            
             new MenuItem
             {
                 Id = 14,
-                Name = "Margherita Pizza",
-                Description = "Classic pizza with tomato, mozzarella, and basil.",
-                Price = 120.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                Name = "Fettuccine Alfredo",
+                Description = "Pasta tossed with butter, Parmesan, and cream.",
+                Price = 145.00M,
+                ImageUrl = "/images/alfredo.jpg",
                 CategoryId = 2
             },
             new MenuItem
             {
                 Id = 15,
-                Name = "Pasta Carbonara",
-                Description = "Pasta with eggs, cheese, pancetta, and pepper.",
-                Price = 140.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                Name = "Bruschetta",
+                Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
+                Price = 90.00M,
+                ImageUrl = "/images/Bruschetta.jpg",
                 CategoryId = 2
             },
             new MenuItem
             {
                 Id = 16,
-                Name = "Lasagna",
-                Description = "Baked layers of pasta with beef ragu and bechamel sauce.",
-                Price = 160.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                Name = "Tiramisu",
+                Description = "Traditional Italian coffee-flavored dessert.",
+                Price = 80.00M,
+                ImageUrl = "/images/Tiramisu.webp",
                 CategoryId = 2
             },
             new MenuItem
             {
                 Id = 17,
-                Name = "Spaghetti Bolognese",
-                Description = "Spaghetti with slow-cooked meat sauce.",
-                Price = 130.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 2
-            },
-            new MenuItem
-            {
-                Id = 18,
-                Name = "Risotto",
-                Description = "Creamy rice dish with mushrooms and Parmesan.",
-                Price = 150.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 2
-            },
-            new MenuItem
-            {
-                Id = 19,
-                Name = "Fettuccine Alfredo",
-                Description = "Pasta tossed with butter, Parmesan, and cream.",
-                Price = 145.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 2
-            },
-            new MenuItem
-            {
-                Id = 20,
-                Name = "Bruschetta",
-                Description = "Grilled bread topped with tomatoes, basil, and olive oil.",
-                Price = 90.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 2
-            },
-            new MenuItem
-            {
-                Id = 21,
-                Name = "Tiramisu",
-                Description = "Traditional Italian coffee-flavored dessert.",
-                Price = 80.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 2
-            },
-            new MenuItem
-            {
-                Id = 22,
                 Name = "Gnocchi",
                 Description = "Soft dough dumplings served with a tomato sauce.",
                 Price = 135.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/Gnocchi.jpg",
                 CategoryId = 2
             },
         
@@ -235,128 +191,84 @@ public class RestaurantContext : DbContext
         // Seed data for drinks
             new MenuItem
             {
-                Id = 23,
+                Id = 18,
                 Name = "Cappuccino",
                 Description = "Italian coffee drink with steamed milk foam.",
                 Price = 50.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/Cappuccino.webp",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 19,
+                Name = "Espresso",
+                Description = "Rich and bold Italian coffee.",
+                Price = 45.00M,
+                ImageUrl = "/images/Espresso.webp",
+                CategoryId = 3
+            },
+            
+            new MenuItem
+            {
+                Id = 26,
+                Name = "Hot Chocolate",
+                Description = "Warm and comforting chocolate drink.",
+                Price = 40.00M,
+                ImageUrl = "/images/hotchaco.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 21,
+                Name = "Lemonade",
+                Description = "Freshly squeezed lemonade.",
+                Price = 40.00M,
+                ImageUrl = "/images/Lemonade.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 23,
+                Name = "Iced Tea",
+                Description = "Chilled iced tea with lemon.",
+                Price = 35.00M,
+                ImageUrl = "/images/Iced.jpg",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 22,
+                Name = "Mineral Water",
+                Description = "Chilled sparkling water.",
+                Price = 30.00M,
+                ImageUrl = "/images/Mineral.png",
+                CategoryId = 3
+            },
+            new MenuItem
+            {
+                Id = 20,
+                Name = "Red Wine",
+                Description = "Full-bodied red wine.",
+                Price = 80.00M,
+                ImageUrl = "/images/redw.jpeg",
                 CategoryId = 3
             },
             new MenuItem
             {
                 Id = 24,
-                Name = "Espresso",
-                Description = "Rich and bold Italian coffee.",
-                Price = 45.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                Name = "Cocktail",
+                Description = "Fruity alcoholic beverage.",
+                Price = 95.00M,
+                ImageUrl = "/images/Cocktail.jpg",
                 CategoryId = 3
             },
             new MenuItem
             {
                 Id = 25,
-                Name = "Red Wine",
-                Description = "Full-bodied red wine.",
-                Price = 80.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 26,
-                Name = "Lemonade",
-                Description = "Freshly squeezed lemonade.",
-                Price = 40.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 27,
-                Name = "Mineral Water",
-                Description = "Chilled sparkling water.",
-                Price = 30.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 28,
-                Name = "Cappuccino",
-                Description = "Italian coffee drink with steamed milk foam.",
-                Price = 50.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 29,
-                Name = "Espresso",
-                Description = "Rich and bold Italian coffee.",
-                Price = 45.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 30,
-                Name = "Red Wine",
-                Description = "Full-bodied red wine.",
-                Price = 80.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 31,
-                Name = "Lemonade",
-                Description = "Freshly squeezed lemonade.",
-                Price = 40.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 32,
-                Name = "Mineral Water",
-                Description = "Chilled sparkling water.",
-                Price = 30.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 33,
-                Name = "Iced Tea",
-                Description = "Chilled iced tea with lemon.",
-                Price = 35.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 34,
-                Name = "Cocktail",
-                Description = "Fruity alcoholic beverage.",
-                Price = 95.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 35,
                 Name = "Beer",
                 Description = "Refreshing cold beer.",
                 Price = 50.00M,
-                ImageUrl = "/images/kitfo.jpg",
-                CategoryId = 3
-            },
-            new MenuItem
-            {
-                Id = 36,
-                Name = "Hot Chocolate",
-                Description = "Warm and comforting chocolate drink.",
-                Price = 40.00M,
-                ImageUrl = "/images/kitfo.jpg",
+                ImageUrl = "/images/beer.jpg",
                 CategoryId = 3
             }
         ); 

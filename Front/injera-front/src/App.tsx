@@ -8,6 +8,8 @@ import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 import Reservation from './pages/Reservation';
 import ReservationPage from './pages/Reservation';
+import Restaurant from './pages/Restaurant';
+
 
 const App: React.FC = () => {
   return (
@@ -19,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/reservation" element={<Reservation/>} />
+          <Route path="/restaurant" element={<Restaurant/>} />
         </Routes>
         <Footer />
       </LanguageProvider>
