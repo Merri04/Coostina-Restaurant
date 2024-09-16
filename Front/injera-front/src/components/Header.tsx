@@ -14,9 +14,11 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 0;
   position: relative;
   z-index: 2; /* Ensures it's above the slideshow */
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Ensure padding does not affect width */
 `;
 
 const Logo = styled.h1`
@@ -69,6 +71,7 @@ const Hamburger = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
+    margin-left: 170px;
   }
 `;
 
@@ -124,10 +127,6 @@ const Header: React.FC = () => {
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
 
       </Nav>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div onClick={() => toggleLanguage('NO')} style={{ cursor: 'pointer', marginRight: '10px' }}>NO</div>
-        <div onClick={() => toggleLanguage('EN')} style={{ cursor: 'pointer' }}>EN</div>
-      </div>
     </HeaderContainer>
   );
 };

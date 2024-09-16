@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('/path-to-your-background-image.jpg'); /* Background Image */
+  background-image: url('/images/Background/5.jpg'); /* Use your background image */
   background-size: cover;
   background-position: center;
   color: #333;
@@ -34,23 +34,24 @@ const FormAndHoursContainer = styled.div`
   }
 `;
 
-// Reservation Form styling
+// Reservation Form styling - transparent background
 const ReservationForm = styled.div`
-  background-color: white;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+  color: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: 'Arial', sans-serif;
 `;
 
 // Button styling
 const Button = styled.button`
-  background-color: #4CAF50;
+  background-color: #28a745;
   color: white;
   padding: 12px 24px;
   font-size: 16px;
@@ -60,36 +61,44 @@ const Button = styled.button`
   margin-top: 20px;
   width: 100%;
   &:hover {
-    background-color: #45a049;
+    background-color: #218838;
   }
 `;
 
-// Opening Hours Section
+// Time Selector Styling
+const TimeSelectionContainer = styled.div`
+  display: flex;
+  gap: 10px; /* Add space between time options */
+  flex-wrap: wrap; /* Allows the time options to wrap */
+`;
+
+// Opening Hours Section - transparent background
 const OpeningHoursContainer = styled.div`
-  background-color: #fafafa;
-  color: #333;
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+  color: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 `;
 
 const OpeningHoursList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 
   li {
-    margin: 8px 0;
+    margin: 10px 0;
   }
 `;
 
-// Map Section, taking up full width below the form and opening hours
+// Map Section, keeping the map unchanged
 const MapContainer = styled.div`
   margin-top: 20px;
   padding: 0;
@@ -111,7 +120,8 @@ const MapContainer = styled.div`
 const FormLabel = styled.label`
   display: block;
   margin: 15px 0 5px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: white;
 `;
 
 const InputField = styled.input`
@@ -120,6 +130,8 @@ const InputField = styled.input`
   border: 1px solid #ccc;
   border-radius: 6px;
   margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent input background */
+  color: #333; /* Dark text for input */
 `;
 
 const ReservationPage: React.FC = () => {
@@ -167,7 +179,9 @@ const ReservationPage: React.FC = () => {
           <DatePicker onSelectDate={setDate} />
 
           <FormLabel>Time</FormLabel>
-          <TimeSelector onSelectTime={setTime} />
+          <TimeSelectionContainer>
+            <TimeSelector onSelectTime={setTime} />
+          </TimeSelectionContainer>
 
           <Button onClick={handleReservationSubmit}>Confirm Reservation</Button>
         </ReservationForm>
@@ -190,7 +204,8 @@ const ReservationPage: React.FC = () => {
       {/* Map Section */}
       <MapContainer>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509437!2d144.95592331550483!3d-37.817209742021955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43e2c4b913%3A0x9048e9b8c84b29a5!2sEureka%20Tower!5e0!3m2!1sen!2sau!4v1630498186226!5m2!1sen!2sau"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.5182683831696!2d10.759041476279395!3d59.922348781859106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e5b64ca9759%3A0x5963f1b87eb77387!2sTrondheimsveien%209%2C%200562%20Oslo%2C%20Norway!5e0!3m2!1sen!2sno!4v1694799546290!5m2!1sen!2sno"
+          allowFullScreen
           loading="lazy"
         ></iframe>
       </MapContainer>
