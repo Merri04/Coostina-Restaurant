@@ -17,6 +17,39 @@ namespace Injera.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
 
+            modelBuilder.Entity("Admin", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AdminId");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -82,7 +115,7 @@ namespace Injera.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = 2,
                             CategoryId = 1,
                             Description = "Beef with black cardamom & spiced butter Mitmita served with injera.",
                             ImageUrl = "/images/kitfo.jpg",
@@ -91,7 +124,7 @@ namespace Injera.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            Id = 1,
                             CategoryId = 1,
                             Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
                             ImageUrl = "/images/gored.jpg",

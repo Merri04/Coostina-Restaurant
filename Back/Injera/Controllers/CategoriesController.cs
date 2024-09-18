@@ -13,14 +13,13 @@ public class CategoriesController : ControllerBase
         _restaurantContext = restaurantContext;
     }
 
-    [HttpGet]
-public ActionResult<IEnumerable<Category>> GetCategories()
-{
-    // Include the MenuItems in the response
-    var categories = _restaurantContext.Categories
-                                       .Include(c => c.MenuItems)
-                                       .ToList();
-    return Ok(categories);
-}
+    [HttpGet("Categories")]
+    public async Task<IActionResult> GetCategories()
+    {
+        var categories = await _restaurantContext.Categories.ToListAsync();
+        Console.WriteLine("Categories: " + categories);
+        return Ok(categories);
+    }
+
 
 }

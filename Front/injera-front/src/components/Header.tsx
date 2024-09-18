@@ -1,7 +1,6 @@
 import React, { useState } from 'react';  
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../pages/LanguageContext';  // Ensure this is a .tsx file
 
 // Define prop types for styled components where needed
 interface NavProps {
@@ -75,41 +74,8 @@ const Hamburger = styled.div`
   }
 `;
 
-const LanguageSwitcher = styled.div`
-  background-color: #222;
-  color: white;
-  padding: 5px 10px;
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-`;
-
-const DropdownContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-
-  a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    &:hover {background-color: #f1f1f1}
-  }
-`;
-
-const Dropdown = styled.div`
-  &:hover ${DropdownContent} {
-    display: block;
-  }
-`;
-
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
 
   return (
     <HeaderContainer>

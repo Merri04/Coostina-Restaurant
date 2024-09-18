@@ -7,10 +7,17 @@ public class RestaurantContext : DbContext
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+                    // Ensure email is unique
+            modelBuilder.Entity<Admin>()
+                .HasIndex(a => a.Email)
+                .IsUnique();
 
             // Defining the relationship between MenuItem and Category
             modelBuilder.Entity<MenuItem>()
@@ -23,14 +30,14 @@ public class RestaurantContext : DbContext
             modelBuilder.Entity<Category>().HasData(
                 new Category { CategoryId = 1, Name = "Habesha" },
                 new Category { CategoryId = 2, Name = "Italian" },
-                new Category {CategoryId = 3, Name = "Drinks"}
+                new Category { CategoryId = 3, Name = "Drinks"}
                 );
 
 
             modelBuilder.Entity<MenuItem>().HasData(
                 new MenuItem
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Kitfo",
                     Description = "Beef with black cardamom & spiced butter Mitmita served with injera.",
                     Price = 325.00M,
@@ -40,7 +47,7 @@ public class RestaurantContext : DbContext
                 },
                 new MenuItem
                 {
-                    Id = 2,
+                    Id = 1,
                     Name = "Gored Gored",
                     Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
                     Price = 325.00M,
@@ -272,6 +279,7 @@ public class RestaurantContext : DbContext
                 CategoryId = 3
             }
         ); 
+        
         }
     }
 
