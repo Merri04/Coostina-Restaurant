@@ -17,7 +17,6 @@ public class CategoriesController : ControllerBase
     public async Task<IActionResult> GetCategories()
     {
         var categories = await _restaurantContext.Categories.ToListAsync();
-        Console.WriteLine("Categories: " + categories);
         return Ok(categories);
     }
 

@@ -13,11 +13,11 @@ const AdminDashboard = () => {
     categoryId: '',
     imageFile: null as File | null // Correctly type the imageFile state
   });
-  const [editItemId, setEditItemId] = useState<number | null>(null);
+  const [editItemId, setEditItemId] = useState<number | null>(null); // Track the item being edited
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const categoriesRes = await axios.get('http://localhost:5102/api/Categories');
+      const categoriesRes = await axios.get('http://localhost:5102/api/Categories/Categories');
       const mappedCategories = categoriesRes.data.map((category: any) => ({
         CategoryId: category.categoryId,
         Name: category.name
@@ -69,17 +69,16 @@ const AdminDashboard = () => {
       if (editItemId !== null) {
         // Update existing item if in edit mode
         const res = await axios.put(`http://localhost:5102/api/MenuItems/${editItemId}`, formData);
-        setMenuItems(menuItems.map((item): MenuItem => (item.id === editItemId ? res.data : item)));
+        
+        setMenuItems(menuItems.map(item => (item.id === editItemId ? res.data : item)));
         setEditItemId(null); // Exit edit mode
       } else {
         // Add new item
-        const res = await axios.post('http://localhost:5102/api/MenuItems', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
+        const res = await axios.post('http://localhost:5102/api/MenuItems', formData); 
 
         setMenuItems([...menuItems, res.data]);
       }
-
+      
       // Reset the form
       setNewItem({ name: '', description: '', price: '', categoryId: '', imageFile: null });
     } catch (err) {
@@ -159,6 +158,7 @@ const AdminDashboard = () => {
         /> {/* Image file input */}
         <button type="submit">{editItemId === null ? 'Add Dish' : 'Update Dish'}</button>
       </form>
+
       <ul>
         {menuItems.map(item => (
           <li key={item.id}>

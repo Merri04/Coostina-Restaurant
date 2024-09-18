@@ -29,6 +29,7 @@ builder.Services.Configure<FormOptions>(options =>
 {
     options.MultipartBodyLengthLimit = 104857600; // Set file size limit (e.g., 100MB)
 });
+// Removed ConfigureServices method as it is not valid in the minimal hosting model
 
 // Add NewtonsoftJson to handle JSON serialization and prevent reference loops
 builder.Services.AddControllers()
