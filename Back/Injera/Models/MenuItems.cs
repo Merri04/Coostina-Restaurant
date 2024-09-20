@@ -11,16 +11,17 @@ public class MenuItem
     [Range(0, double.MaxValue, ErrorMessage = "Price must be greater than or equal to 0")]
     public decimal Price { get; set; }
 
-    public string ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
 
     // Add this property for the uploaded file
-    [NotMapped]
-    public IFormFile ImageFile { get; set; }
+    //[NotMapped]
+    //public IFormFile ImageFile { get; set; }
 
     // Foreign Key
-    [Required]
+    [ForeignKey("Category")]
     public int CategoryId { get; set; }
 
     // Navigation property
     public Category Category { get; set; }
+    
 }

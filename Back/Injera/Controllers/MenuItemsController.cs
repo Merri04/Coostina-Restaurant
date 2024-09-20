@@ -36,10 +36,32 @@ namespace Injera.Controllers
 
             return Ok(menuItem);
         }
-
+        // POST: api/MenuItems
         [HttpPost]
-        public async Task<IActionResult> CreateMenuItem([FromForm] MenuItem menuItem, IFormFile imageFile)
+        public async Task<IActionResult> CreateMenuItem([FromForm] MenuItemDto menuItemDto, IFormFile imageFile)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Ensure CategoryId is passed and valid
+            var category = await _restaurantContext.Categories.FindAsync(menuItemDto.CategoryId);
+            if (category == null)
+            {
+                ModelState.AddModelError("Category", "The CategoryId provided does not exist.");
+                return BadRequest(ModelState); // Return error if category is invalid
+            }
+
+            var menuItem = new MenuItem
+            {
+                Name = menuItemDto.Name,
+                Description = menuItemDto.Description,
+                Price = menuItemDto.Price,
+                CategoryId = menuItemDto.CategoryId, // Use CategoryId from DTO
+            };
+
+            // Handle image file
             if (imageFile != null)
             {
                 var imagePath = Path.Combine("wwwroot", "images", imageFile.FileName);
@@ -50,16 +72,12 @@ namespace Injera.Controllers
                 menuItem.ImageUrl = $"/images/{imageFile.FileName}";
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);  // Log and return validation errors
-            }
-
+            // Add the menu item to the database
             _restaurantContext.MenuItems.Add(menuItem);
             await _restaurantContext.SaveChangesAsync();
+
             return Ok(menuItem);
         }
-
 
         // PUT: api/MenuItems/{id}
         [HttpPut("{id}")]
@@ -75,7 +93,7 @@ namespace Injera.Controllers
             menuItem.Name = updatedItem.Name;
             menuItem.Description = updatedItem.Description;
             menuItem.Price = updatedItem.Price;
-            menuItem.CategoryId = updatedItem.CategoryId;
+            menuItem.CategoryId = updatedItem.CategoryId; // Ensure this is properly updated
 
             if (imageFile != null)
             {
@@ -104,6 +122,7 @@ namespace Injera.Controllers
 
             _restaurantContext.MenuItems.Remove(menuItem);
             await _restaurantContext.SaveChangesAsync();
+
             return Ok();
         }
     }

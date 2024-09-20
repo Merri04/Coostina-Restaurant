@@ -13,7 +13,7 @@ public class CategoriesController : ControllerBase
         _restaurantContext = restaurantContext;
     }
 
-    [HttpGet("Categories")]
+    [HttpGet]
     public async Task<IActionResult> GetCategories()
     {
         var categories = await _restaurantContext.Categories.ToListAsync();

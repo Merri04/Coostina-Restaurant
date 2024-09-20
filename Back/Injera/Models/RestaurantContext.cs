@@ -37,7 +37,7 @@ public class RestaurantContext : DbContext
             modelBuilder.Entity<MenuItem>().HasData(
                 new MenuItem
                 {
-                    Id = 2,
+                    Id = 1,
                     Name = "Kitfo",
                     Description = "Beef with black cardamom & spiced butter Mitmita served with injera.",
                     Price = 325.00M,
@@ -47,7 +47,7 @@ public class RestaurantContext : DbContext
                 },
                 new MenuItem
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Gored Gored",
                     Description = "Lean & tender cubes of beef spiced with butter 'Mitmita Spice' served with injera.",
                     Price = 325.00M,

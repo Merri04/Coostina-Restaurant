@@ -2,12 +2,15 @@ using System.ComponentModel.DataAnnotations;
 
 public class MenuItemDto
 {
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public decimal Price { get; set; }
-    public int CategoryId { get; set; }
-    public string ImageUrl { get; set; }
-    
     [Required]
-    public IFormFile ImageFile { get; set; } // For image upload
+    public string Name { get; set; }
+
+    [Required]
+    public string Description { get; set; }
+
+    [Range(0, double.MaxValue, ErrorMessage = "Price must be greater than or equal to 0")]
+    public decimal Price { get; set; }
+
+    [Required(ErrorMessage = "CategoryId is required")]
+    public int CategoryId { get; set; }  // CategoryId should be required.
 }
