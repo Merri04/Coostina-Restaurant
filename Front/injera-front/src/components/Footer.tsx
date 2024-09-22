@@ -4,14 +4,14 @@ import styled from 'styled-components';
 const FooterContainer = styled.footer`
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 0;
   text-align: center;
 `;
 
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
-      © 2024 EthioStar. All rights reserved.
+      © 2024 Coostina. All rights reserved.
     </FooterContainer>
   );
 }

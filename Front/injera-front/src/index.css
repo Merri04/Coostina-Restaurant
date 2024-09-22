@@ -16,5 +16,6 @@ body, html {
   padding: 0;
   overflow-x: hidden; /* Ensure no horizontal overflow */
   height: 100%; /* Ensure full height for sticky positioning */
+  overflow:auto;
 }
 

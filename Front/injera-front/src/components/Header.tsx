@@ -8,12 +8,12 @@ interface NavProps {
 }
 
 const HeaderContainer = styled.header`
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background-color: #696969;//rgba(0, 0, 0, 0.5); /* Semi-transparent black */
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 40px; /* Add padding to control spacing */
   position: relative;
   z-index: 2; /* Ensures it's above the slideshow */
   width: 100%; /* Ensure full width */
@@ -22,7 +22,8 @@ const HeaderContainer = styled.header`
 
 const Logo = styled.h1`
   font-family: 'Arial', sans-serif;
-  color: red;
+  color: #FFA500;
+  margin-left: 0;
 `;
 
 const Nav = styled.nav<NavProps>`
@@ -33,9 +34,9 @@ const Nav = styled.nav<NavProps>`
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 16px;
+    font-size: 18px;
     &:hover {
-      color: #ccc;
+      color: #DAA520;
     }
   }
 

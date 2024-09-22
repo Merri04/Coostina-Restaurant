@@ -7,29 +7,31 @@ import { Link } from 'react-router-dom';  // Import Link
 // Container for the entire menu
 const MenuContainer = styled.div`
   padding: 45px 0;
+  font-family: 'Times New Roman', sans-serif;
   text-align: center;
   background-color: Gainsboro;
   min-height: 100vh; /* Ensure full page height */
   width: 100%;
+  overflow-x: visible; /* Prevent horizontal scrolling */
   max-width: 100%;
   position: relative;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
   padding-bottom: 100px; /* Add padding to prevent content from overlapping with the footer */
   padding-top: 2px; /* Add some space above the content as well */
 `;
+
 // Sticky Header for the Category buttons
 const StickyHeader = styled.div`
   position: sticky;
   top: 0;
-  background-color: #fff;
-  z-index: 999; /* Increase z-index to make sure it's above other elements */
-  padding: 0 0;
+  background-color: Gainsboro;
+  z-index: 1000; /* Increase z-index to make sure it's above other elements */
+  padding: 15px 0;
   display: flex;
   justify-content: center;
   gap: 20px; /* Reduce space between buttons */
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
   flex-wrap: wrap;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 4px rgba(0,0,0,0.1);
   width: 100%;
 `;
 // Styled category buttons
@@ -41,6 +43,8 @@ const CategoryButton = styled.button<{ isActive: boolean }>`
   cursor: pointer;
   font-size: 20px;
   white-space: nowrap; /* Prevent buttons from breaking onto multiple lines */
+   
+
 
   &:hover {
     background-color: #D2691E;
@@ -75,7 +79,7 @@ const MenuItemsGrid = styled.div`
 const MenuItemCard = styled.div`
   text-align: center;
   border: 1px solid #ddd;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 290px; /* Default max width for larger screens */
@@ -96,11 +100,11 @@ const Image = styled.img`
 
 // Adjust the details padding and margins to bring items closer
 const MenuItemDetails = styled.div`
-  padding: 10px; /* Reduce padding inside the card */
+  padding: 12px; /* Reduce padding inside the card */
 `;
 
 const MenuItemName = styled.h2`
-  font-size: 1rem; /* Reduce font size */
+  font-size: 1.1rem; /* Reduce font size */
   font-weight: bold;
   margin: 5px 0; /* Adjust margins */
 `;
@@ -112,26 +116,28 @@ const MenuItemDescription = styled.p`
 const Price = styled.p`
   font-weight: bold;
   margin-top: 5px;
+  color: #D2691E;
+  font-family: 'Times New Roman', sans-serif;
 `;
 // Styled Reservation Button
 const ReservationButton = styled(Link)`
   display: inline-block;
   position: fixed; /* Keep it fixed */
-  bottom: 70px;
-  left: 50%;  /* Move the button halfway across the screen */
-  transform: translateX(-50%);  /* Offset it by 50% of its own width to center */
-  margin-top: 20px;
-  padding: 15px 30px;
-  background-color: #D2691E;
+  bottom: 20px;
+  right: -77px;  /* Move the button halfway across the screen */
+  transform: translateX(-60%);  /* Offset it by 50% of its own width to center */
+  padding: 13px 20px; 
+  background-color: #B8860B;
   color: #fff;
   text-decoration: none; 
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 10px;
   z-index: 1000; /* Ensure it's above other content */
   max-width: 200px;
-
+  font-family: 'Times New Roman', sans-serif;
+  overflow: hidden;
   &:hover {
-    background-color: #A0522D;
+    background-color: #808000;
   }
 
   @media (max-width: 768px) {
@@ -227,6 +233,7 @@ useEffect(() => {
       >
         Drinks
       </CategoryButton>
+
     </StickyHeader>
 
       {/* Grid layout for menu items */}
