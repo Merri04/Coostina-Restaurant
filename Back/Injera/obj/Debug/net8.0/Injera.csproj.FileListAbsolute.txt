@@ -107,8 +107,6 @@ C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.AssemblyInfo.cs
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.csproj.CoreCompileInputs.cache
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.RazorAssemblyInfo.cache
-C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.RazorAssemblyInfo.cs
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\staticwebassets\msbuild.Injera.Microsoft.AspNetCore.StaticWebAssets.props
@@ -116,9 +114,7 @@ C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Injera.props
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Injera.props
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\scopedcss\bundle\Injera.styles.css
-C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\scopedcss\projectbundle\Injera.bundle.scp.css
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.csproj.Up2Date
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\Injera.dll
 C:\Users\Merry Syum\OneDrive\Documents\semester 5\ItProjekt\Eri-restaurant\Back\Injera\obj\Debug\net8.0\refint\Injera.dll

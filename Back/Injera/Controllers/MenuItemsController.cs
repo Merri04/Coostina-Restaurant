@@ -44,7 +44,6 @@ namespace Injera.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             // Ensure CategoryId is passed and valid
             var category = await _restaurantContext.Categories.FindAsync(menuItemDto.CategoryId);
             if (category == null)
@@ -52,13 +51,12 @@ namespace Injera.Controllers
                 ModelState.AddModelError("Category", "The CategoryId provided does not exist.");
                 return BadRequest(ModelState); // Return error if category is invalid
             }
-
-            var menuItem = new MenuItem
+                        var menuItem = new MenuItem
             {
-                Name = menuItemDto.Name,
-                Description = menuItemDto.Description,
-                Price = menuItemDto.Price,
-                CategoryId = menuItemDto.CategoryId, // Use CategoryId from DTO
+                Name = menuItemDto.Name ?? "Default Name", // Provide a default name if it's null
+                Description = menuItemDto.Description ?? "Default Description", // Provide a default description if it's null
+                Price = menuItemDto.Price ?? 0, // Default to 0 if price is not provided
+                CategoryId = menuItemDto.CategoryId ?? 1, // Default to a valid CategoryId
             };
 
             // Handle image file
@@ -81,19 +79,34 @@ namespace Injera.Controllers
 
         // PUT: api/MenuItems/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateMenuItem(int id, [FromForm] MenuItem updatedItem, IFormFile imageFile)
+        public async Task<IActionResult> UpdateMenuItem(int id, [FromForm] MenuItemDto updatedItem, IFormFile imageFile)
         {
+           
+
+            // Find the menu item
             var menuItem = await _restaurantContext.MenuItems.FindAsync(id);
             if (menuItem == null)
             {
                 return NotFound();
             }
+            // Update fields only if they are provided
+            if (!string.IsNullOrWhiteSpace(updatedItem.Name))
+            {
+                menuItem.Name = updatedItem.Name;
+            }
+            if (!string.IsNullOrWhiteSpace(updatedItem.Description))
+            {
+                menuItem.Description = updatedItem.Description;
+            }
+            if (updatedItem.Price.HasValue)
+            {
+                menuItem.Price = updatedItem.Price.Value;
+            }
+            if (updatedItem.CategoryId.HasValue)
+            {
+                menuItem.CategoryId = updatedItem.CategoryId.Value;
+            }
 
-            // Update fields
-            menuItem.Name = updatedItem.Name;
-            menuItem.Description = updatedItem.Description;
-            menuItem.Price = updatedItem.Price;
-            menuItem.CategoryId = updatedItem.CategoryId; // Ensure this is properly updated
 
             if (imageFile != null)
             {
@@ -108,6 +121,7 @@ namespace Injera.Controllers
             await _restaurantContext.SaveChangesAsync();
 
             return Ok(menuItem);
+
         }
 
         // DELETE: api/MenuItems/{id}
@@ -127,3 +141,5 @@ namespace Injera.Controllers
         }
     }
 }
+
+

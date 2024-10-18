@@ -2,15 +2,12 @@ using System.ComponentModel.DataAnnotations;
 
 public class MenuItemDto
 {
-    [Required]
-    public string Name { get; set; }
+    public string? Name { get; set; } // Make Name nullable to allow partial updates
 
-    [Required]
-    public string Description { get; set; }
+    public string? Description { get; set; } // Make Description nullable
 
     [Range(0, double.MaxValue, ErrorMessage = "Price must be greater than or equal to 0")]
-    public decimal Price { get; set; }
+    public decimal? Price { get; set; } // Make Price nullable
 
-    [Required(ErrorMessage = "CategoryId is required")]
-    public int CategoryId { get; set; }  // CategoryId should be required.
+    public int? CategoryId { get; set; } // Make CategoryId nullable to allow optional updates
 }
