@@ -1,24 +1,21 @@
-using Microsoft.AspNetCore.Mvc;
 using Injera.Models;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
 public class CategoriesController : ControllerBase
 {
-    private readonly RestaurantContext _restaurantContext;
+    private readonly ICategoryService _categoryService;
 
-    public CategoriesController(RestaurantContext restaurantContext)
+    public CategoriesController(ICategoryService categoryService)
     {
-        _restaurantContext = restaurantContext;
+        _categoryService = categoryService;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetCategories()
     {
-        var categories = await _restaurantContext.Categories.ToListAsync();
+        var categories = await _categoryService.GetCategoriesAsync();
         return Ok(categories);
     }
-
-
 }

@@ -66,7 +66,7 @@ const Input = styled.input`
 const Button = styled.button`
   width: 100%;
   padding: 12px;
-  background-color: green;
+  background-color: #00b398;
   color: white;
   border: none;
   border-radius: 10px;
@@ -112,17 +112,14 @@ const Login = () => {
       if (!response.data || !response.data.token) {
         throw new Error('Invalid server response: No token found');
       }
-      console.log(response.data); // Example usage of the response
-// Assuming the token is returned as part of the response
+      console.log(response.data); 
       const token = response.data.token;
-      // Store the token in localStorage (if using tokens)
-      // localStorage.setItem('token', response.data.token);
-      // Store the token in localStorage
+    
       localStorage.setItem('token', token);
 
-      // Redirect to the dashboard
+     
       navigate('/admin/dashboard');
-      //window.location.href = '/admin/dashboard'; // Redirect after login
+      //window.location.href = '/admin/dashboard'; 
     } catch (error : any) {
       console.error('Login error:', error); 
       setError('Invalid email or password.');

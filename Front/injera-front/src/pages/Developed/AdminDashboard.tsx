@@ -3,6 +3,7 @@ import axios from 'axios';
 import { MenuItem } from '../../components/models/MenuItem';
 import { Category } from '../../components/models/Category';
 import { styled } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 
 // Styled container for the entire dashboard
@@ -39,21 +40,7 @@ const Textarea = styled.textarea`
   overflow-y: auto; /* Enable scrolling if text overflows */
 
 `;
-// styled add and update button
-const Button = styled.button`
-  padding: 8px 20px;
-  border: none;
-  background-color: #008000;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  
-  &:hover {
-    background-color: #A0522D;
-  }
-`;
+
 // Styled select element for categories
 const Select = styled.select`
   padding: 10px;
@@ -210,6 +197,16 @@ const AdminDashboard = () => {
   const [editItemId, setEditItemId] = useState<number | null>(null); // Track the item being edited
   // add ref for the form
   const formRef = useRef<HTMLFormElement>(null);
+  const navigate = useNavigate(); // For navigation
+
+  // Check for token and redirect to login if not authenticated
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login'); // Redirect to login if token is not found
+    }
+  }, [navigate]);
+  
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -499,3 +496,7 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+// where did i say the admin must be logged in to access the admin dashboard page?
+
+
